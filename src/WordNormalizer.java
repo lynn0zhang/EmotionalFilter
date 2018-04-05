@@ -1,0 +1,25 @@
+
+/**
+ * This is for INFSCI 2140 in 2015
+ */
+public class WordNormalizer {
+    //you can add essential private methods or variables
+
+    // YOU MUST IMPLEMENT THIS METHOD
+    public char[] lowercase(char[] chars) {
+        //transform the uppercase characters in the word to lowercase
+        for (int index = 0; index < chars.length; index++) {
+            chars[index] = Character.toLowerCase(chars[index]);
+        }
+        return chars;
+    }
+
+    public String stem(char[] chars) {
+        //use the stemmer in Classes package to do the stemming on input word, and return the stemmed word
+        Stemmer s = new Stemmer();
+        s.add(chars, chars.length);
+        s.stem();
+        return s.toString();
+    }
+
+}
